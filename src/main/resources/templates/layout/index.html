@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="setContent(content)"> <!-- 파라미터로 조각코드 받기 -->
+
+    <head>
+ 
+
+    
+    
+   <!-- fragment에서 조각 가져오기 - day 57 -->
+	    <div class="content">
+				<th:block th:replace = " ~{layout/fragment :: frag1 } ">
+				</th:block>
+		</div>
+       
+    
+    </head>
+    
+    
+<!-- 바디시작. 끝까지 간다-->
+   
+    <body>
+    <!-- fragment에서 조각 가져오기 - day 57 -->
+		<div class="content">
+			<th:block th:replace = " ~{layout/fragment :: frag2 } ">
+			</th:block>
+		</div> 
+        
+        
+        
+        
+     <!-- Page content-->
+        <div class="container-fluid">
+            <th:block th:replace = "${content}"></th:block> <!-- 전달받은 파라미터 사용하기 이거없으면 큰일남-->
+        </div>
+        
+    </body>
+<!-- 바디 끝 -->    
+ 
+</html>
