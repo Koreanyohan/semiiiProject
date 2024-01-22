@@ -28,13 +28,13 @@ public class Item extends BaseEntity {
 	private int no; //제품 번호
 	
 	@Column(length= 30, nullable= false)
-	String item_name;
+	private String item_name;
 	
 	@Column(length= 30, nullable= false)
-	String seller;
+	private String seller;
 	
 	@Column(length= 30, nullable= false)
-	int price ; 
+	private int price ; 
 
 	
 	

@@ -21,7 +21,7 @@ public class ItemServiceTest {
 		
 		int no = service.register(dto);
 		
-		System.out.println("새로운 게시물 번호 : " + no);
+		System.out.println("새로운 품목 번호 : " + no);
 		
 	}
 	
