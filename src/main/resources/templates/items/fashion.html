@@ -5,14 +5,48 @@
 
 
 
-
-
+<div class="parent" style="flex-direct: column; justify-content : center; align-items : center;">
 <!-- 티셔츠 -->
-	<img src=" https://www.wooritee.com/data/item/1541998812/thumb-white_280x280.png" style="width:300px; height:300px;"> 
+<p>
+<a href="/items/fashion_tshirt" class="btn btn-info listBtn"  th:href=" @{/items/infoRead(no=2)} ">
+	<img src="https://www.wooritee.com/data/item/1541998812/thumb-white_280x280.png" style="width:300px; height:300px;">
+</a>
+</p>
+
+ 
 <!-- 셔츠 -->    
+<p>
+<a href="/items/fashion_shirt" class="btn btn-info listBtn"  th:href=" @{/items/infoRead(no=7)} ">
     <img src="https://m.ashirt.kr/web/product/medium/202205/2a2327c2bf66c610538867371a400371.jpg" style="width:300px; height:300px;">
-<!-- 바지 -->    
+</a>
+</p>
+ 
+<!-- 바지 -->
+<p>
+<a href="/items/fashion_trouser" class="btn btn-info listBtn"  th:href=" @{/items/infoRead(no=6)} ">    
     <img src="https://www.costco.co.kr/medias/sys_master/images/ha4/h5f/168520913485854.jpg" style="width:300px; height:300px;">
+</a>
+</p>
+ 
+</div>
+
+
+
+
+<script th:inline="javascript">  //register처럼 11행의 form태그에 넣기엔 양이 졸라많아서 여기서 넣음
+
+// form 태그객체 가져오기 -  //$() 함수: CSS선택자로 HTML 태그를 가져온다
+	var form = $("form");
+
+
+	$(".listBtn").click(function(){ 
+		form
+			.attr("action", "/items/readInfo") //주소 board/list로 redirect함.
+			.attr("method", "get") //요청방식 => controller의 list메서드 실행
+			.submit();		
+	});
+	
+</script>
 
 
 

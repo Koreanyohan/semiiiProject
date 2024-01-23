@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
+<th:block th:replace="~{/layout/index :: setContent(~{this::content})}">
 
-</body>
-</html>
+    <th:block th:fragment="content">
+
+
+
+<div class="parent" style="flex-direct: column; justify-content : center; align-items : center;">
+<!-- 티셔츠 -->
+<p>
+<a href="/items/fashion_tshirt  ">
+	<img src="https://www.wooritee.com/data/item/1541998812/thumb-white_280x280.png" style="width:300px; height:300px;">
+</a>
+</p>
+
+ 
+<!-- 셔츠 -->    
+<p>
+<a href="/items/fashion_shirt" class="btn btn-info listBtn"  th:href=" @{/items/infoRead(no=2)} ">
+    <img src="https://m.ashirt.kr/web/product/medium/202205/2a2327c2bf66c610538867371a400371.jpg" style="width:300px; height:300px;">
+</a>
+</p>
+ 
+<!-- 바지 -->
+<p>
+<a href="/items/fashion_trouser" class="btn btn-info listBtn"  th:href=" @{/items/infoRead(no=3)} ">    
+    <img src="https://www.costco.co.kr/medias/sys_master/images/ha4/h5f/168520913485854.jpg" style="width:300px; height:300px;">
+</a>
+</p>
+ 
+</div>
+
+
+
+
+
+
+
+
+ </th:block> 
+
+</th:block> 

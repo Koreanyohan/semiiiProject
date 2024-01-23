@@ -33,7 +33,7 @@ public class Item extends BaseEntity {
 	@Column(length= 30, nullable= false)
 	private String seller;
 	
-	@Column(length= 30, nullable= false)
+	@Column(nullable= false)
 	private int price ; 
 
 	

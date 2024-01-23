@@ -20,8 +20,6 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ItemDto {
-
-	
 	
 	int no; //제품 번호
 	

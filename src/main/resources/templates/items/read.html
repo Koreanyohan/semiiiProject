@@ -1,0 +1,56 @@
+ 
+<!DOCTYPE html>
+
+<th:block th:replace="~{/layout/index :: setContent(~{this::content})}">
+
+    <th:block th:fragment="content">
+    
+<h1 class="mt-4"> 상세페이지 </h1>
+
+<div class="form-group">
+  <label >번호</label>
+ 	 <input type="text" class="form-control" th:value="${dto.no}" readonly > <!-- readonly 속성 때문에 수정이 안됨. -->
+</div>
+
+<div class="form-group">
+  <label >제품 이름</label>
+  	<input type="text" class="form-control" th:value="${dto.item_name}" readonly > <!-- th:value - 입력 기초값기능 -->
+</div>
+
+<div class="form-group">
+  <label >판매자 이름</label>
+ 	 <textarea class="form-control" rows="5" readonly>[[${dto.seller}]] </textarea> 
+</div>
+
+<div class="form-group">
+  <label >가격</label>
+	<input type="text" class="form-control" th:value="${dto.price}" readonly >   
+</div>
+
+<div class="form-group">
+  <label >등록일</label>
+ 	 <input type="text" class="form-control" th:value="${ #temporals.format( dto.regDate, 'yyyy/MM/dd HH:mm:ss') }" readonly>
+</div>
+
+<div class="form-group">
+  <label >수정일</label>
+ 	 <input type="text" class="form-control" th:value="${ #temporals.format( dto.modDate, 'yyyy/MM/dd HH:mm:ss') }" readonly>
+</div>
+
+
+
+
+<a th:href="@{/items/modify (no=${dto.no}) }">  <!-- 수정 버튼 링크처리.  (no=${dto.no})는 컨트롤러에 정의된 modify메서드에서 파라미터 받음 --> 
+  <button type="button" class="btn btn-primary">수정</button>
+</a>
+
+
+
+<a th:href="@{/items/register}">  <!-- 목록으로 가는 버튼 링크처리 -->
+  <button type="button" class="btn btn-info">목록으로</button>
+</a>
+
+
+</th:block> <!-- 6행에서 시작 -->
+
+</th:block>  <!-- 4행에서 시작 -->
