@@ -1,5 +1,5 @@
-
 <!DOCTYPE html>
+<!-- 41행에 리뷰로가는 버튼 -->
 
 <th:block th:replace="~{/layout/index :: setContent(~{this::content})}">
 
@@ -37,6 +37,36 @@
  	 <input type="text" class="form-control" th:value="${ #temporals.format( dto.modDate, 'yyyy/MM/dd HH:mm:ss') }" readonly>
 </div>
 
+
+<a th:href="@{/review/register}">  <!-- 리뷰로 가는 버튼 링크처리 -->
+  <button type="button" class="btn btn-info">리뷰로</button>
+</a>
+
+
+<a th:href="@{/items/register}">  <!-- 목록으로 가는 버튼 링크처리 -->
+  <button type="button" class="btn btn-info">목록으로</button>
+</a>
+
+
+
+
+<form th:action="@{/cart/cart_list}" th:method="post">   <!-- vs modify파일 11행 --> 
+			 	<!-- ㄴ 데이터 받을 주소. html이아니라 url.(컨트롤러 가봐)   th:method는 방식 post라서 boardController의 postMapping이 호출됨. cf) 메서드는 post랑 get밖에 안됨 form에서는-->
+			 	
+  <div class="form-group"> 	 <!--  BoardDTO에서 동적으로 입력되어야할 데이터만 form형식에 입력 -->    
+    <textarea class="form-control" rows="1" name="item_name" style="color:white;"> [[${dto.item_name}]] </textarea>
+  </div>
+  
+  <div class="form-group">    
+    <textarea class="form-control" rows="1" name="seller" style="color:white;"> [[${dto.seller}]] </textarea>
+  </div>
+  
+  <div class="form-group">    
+    <textarea class="form-control" rows="1" name="price" style="color:white;"> [[${dto.price}]] </textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary"> 장바구니 등록</button>
+</form>
 
 
 
