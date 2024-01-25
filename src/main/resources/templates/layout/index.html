@@ -6,6 +6,15 @@
     <head>
  
  
+   <style>
+    
+   .content_align {position:relative; left:230px; width:70%;}  /* 이거로 컨텐츠로 받는 것들 전부 왼쪽이랑 띄어놓음 */
+   
+  	li {list-style:none;}  /* 리스트 앞에 점 없애기 */
+   
+   </style>  
+   
+   
    
     
    <!-- fragment에서 조각 가져오기 - day 57 -->
@@ -37,7 +46,7 @@
 		
                 
      <!-- Page content-->  <!-- 각종페이지에서 받아올 조각 수용부분 -->
-        <div class="container-fluid">
+        <div class="container-fluid content_align">  <!-- head에서 정의한 content_align클래스 이거로 컨텐츠로 받는 것들 전부 왼쪽이랑 띄어놓음 -->
             <th:block th:replace = "${content}"></th:block> <!-- 전달받은 파라미터 사용하기 이거없으면 큰일남-->
         </div>
    </div>

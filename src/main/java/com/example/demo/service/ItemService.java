@@ -27,8 +27,11 @@ public interface ItemService {
 	
 	default ItemDto entityToDTO(Item entity) {
 		ItemDto dto = ItemDto.builder()
-				.no(entity.getNo()).item_name(entity.getItem_name())
-				.seller(entity.getSeller()).price(entity.getPrice()).regDate(entity.getRegDate())
+				.no(entity.getNo())
+				.item_name(entity.getItem_name())
+				.seller(entity.getSeller())
+				.price(entity.getPrice())
+				.regDate(entity.getRegDate())
 				.modDate(entity.getModDate())
 				.build();
 		return dto;

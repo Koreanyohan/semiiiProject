@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<!-- 41행에 리뷰로가는 버튼 -->
+
 
 <th:block th:replace="~{/layout/index :: setContent(~{this::content})}">
 
     <th:block th:fragment="content">
     
 <h1 class="mt-4"> 제품 정보 </h1>
+
+
+
+
+<!-- 이미지 출력(3) 외부에 있는 이미지를 상대경로로 출력 -->     
+        <div class="form-group">
+            <label >세번째 이미지</label>
+            <img th:src="@{/uploadfile/banana.png}">
+        </div>
+
+
+
+
 
 <form>
 <div class="form-group">
