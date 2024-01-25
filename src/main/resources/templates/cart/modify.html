@@ -16,29 +16,20 @@
   </div>									<!-- ㄴ name에 field명 매핑한다. dto 참변 값들. qk와 변경가능한 값만 네이망함. -->
 
   <div class="form-group">
-    <label >리뷰 제목</label>
-    <input type="text" class="form-control" name="review_title" th:value="${dto.review_title}">
+    <label >제품 품목</label>
+    <input type="text" class="form-control" name="item_name" th:value="${dto.item_name}">
   </div>
   
   <div class="form-group">
-    <label >작성자</label>
-    <textarea class="form-control" rows="5" name="review_writer"> [[${dto.review_writer}]] </textarea>
+    <label >판매자</label>
+    <textarea class="form-control" rows="5" name="seller"> [[${dto.seller}]] </textarea>
   </div>
   
   <div class="form-group">
-    <label >리뷰 내용</label>
-    <input type="text" class="form-control" name="review" th:value="${dto.review}">
+    <label >가격</label>
+    <input type="text" class="form-control" name="price" th:value="${dto.price}">
   </div>
   
-  <div class="form-group">
-    <label >등록일</label>
-    <input type="text" class="form-control" th:value="${ #temporals.format( dto.regDate, 'yyyy/MM/dd HH:mm:ss') }" readonly>
-  </div>
-  
-  <div class="form-group">
-    <label >수정일</label>
-    <input type="text" class="form-control" th:value="${ #temporals.format( dto.modDate, 'yyyy/MM/dd HH:mm:ss') }" readonly>
-  </div>
 
 </form>
 
@@ -65,7 +56,7 @@
 			// 수정 버튼 누르면 위의 메서드 return되고, 아래의 메서드가 실행된다.
 	// form~attr~submit : 서버에 게시물 수정 요청    
 		form
-			.attr("action", "/review/modify") // 주소. items/modify로 redirect함. 
+			.attr("action", "/cart/modify") // 주소. items/modify로 redirect함. 
 			.attr("method", "post") // 방식. 폼태그는 PUT방식을 사용할 수 없으므로, POST방식으로 처리.
 				// ㄴ board/modify 정의 된거 2개지. 그 중에 postMapping된거 호출 하려고 이거 씀.즉, 컨트롤러의 modifyPost 메서드 실행
 			.submit(); 
@@ -76,7 +67,7 @@
  // 2. 목록버튼 이벤트처리 
 	$(".listBtn").click(function(){ 
 		form
-			.attr("action", "/review/register") //주소 board/list로 redirect함.
+			.attr("action", "/cart/cart_list") //주소 board/list로 redirect함.
 			.attr("method", "get") //요청방식 => controller의 list메서드 실행
 			.submit();		
 	});
@@ -85,7 +76,7 @@
  // 3. 삭제버튼 이벤트처리
  	$(".removeBtn").click(function(){ 		
  		form
-	 		.attr("action", "/review/remove") //주소 board/remove로 redirect함.
+	 		.attr("action", "/cart/remove") //주소 board/remove로 redirect함.
 	 		.attr("method", "post") //요청방식 => controller의 remove메서드 실행
 	 		.submit(); 		
  		

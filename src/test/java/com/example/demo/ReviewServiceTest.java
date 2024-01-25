@@ -7,22 +7,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.example.demo.dto.ItemDto;
-import com.example.demo.dto.ItemDto_Cart;
-import com.example.demo.service.CartService;
+import com.example.demo.dto.ReviewDto;
 import com.example.demo.service.ItemService;
+import com.example.demo.service.ReviewService;
 
 @SpringBootTest
-public class ItemServiceTest {
+public class ReviewServiceTest {
 
 	@Autowired
-	CartService service;
+	ReviewService service;
 	
 	@Test
 	public void 게시물등록() {
 		
-		ItemDto_Cart dto = ItemDto_Cart.builder()
-				.item_name("포켓몬빵").seller("샤니")
-				.price(1500)
+		ReviewDto dto = ReviewDto.builder()
+				.review_title("좋아요").review_writer("홍길동")
+				.review("사장님이 미쳤음")
 				.build();
 		
 		int no = service.register(dto);
@@ -34,7 +34,7 @@ public class ItemServiceTest {
 	
 	@Test
 	void 게시물단건조회() {
-		ItemDto_Cart dto = service.read(1);
+		ReviewDto dto = service.read(1);
 		
 		System.out.println(dto);
 	}
@@ -43,9 +43,9 @@ public class ItemServiceTest {
 	
 	@Test
 	void 게시물수정() {
-		ItemDto_Cart dto = service.read(1);
+		ReviewDto dto = service.read(1);
 		
-		dto.setItem_name("디지몬빵");
+		dto.setReview("좋다");
 		
 		service.modify(dto);
 	}
@@ -53,7 +53,7 @@ public class ItemServiceTest {
 	
 	@Test
 	void 게시물삭제() {
-		int result = service.remove(5);
+		int result = service.remove(２);
 		
 		System.out.println("결과가 1이면 삭제 성공,결과가 0이면 삭제 실패" + result);
 	}

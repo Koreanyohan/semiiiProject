@@ -47,4 +47,8 @@ public interface ItemService {
 	// 5. 게시물 삭제
 		int remove(int no); // 결과 알려주려고 하다보니 반환타입들어감. 아니면 그냥 void였었음.
 	
+		
+		
+		
+		
 }
